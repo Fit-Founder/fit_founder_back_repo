@@ -3,7 +3,7 @@ spring:
     url: jdbc:h2:mem:fitfounder;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     driver-class-name: org.h2.Driver
     username: sa
-    password: 
+    password:
   jpa:
     hibernate:
       ddl-auto: update
@@ -16,3 +16,9 @@ spring:
       path: /h2-console
 server:
   port: 8080
+jwt:
+  secret: RkFMRV9TRUNSRVRfS0VZX0xPTkdfRU5PVUdIX1RPX1JFQUxMWV9CRV9TRUNVUkU
+  issuer: fit-founder
+  audience: fit-founder-client
+  accessTokenTtlSeconds: 900
+  refreshTokenTtlSeconds: 2592000

@@ -23,12 +23,12 @@ public class AuthController {
 
     @PostMapping("/refresh")
     public ResponseEntity<AuthDtos.AuthResponse> refresh(@RequestBody @Valid AuthDtos.RefreshRequest request) {
-        // Placeholder: return new tokens using refresh token
-        AuthDtos.AuthTokens tokens = AuthDtos.AuthTokens.builder()
-                .accessToken("jwt-access-refreshed")
-                .refreshToken(request.getRefreshToken())
-                .tokenType("bearer")
-                .build();
-        return ResponseEntity.ok(AuthDtos.AuthResponse.builder().userId("unknown").tokens(tokens).build());
+        return ResponseEntity.ok(authService.refresh(request));
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<Void> logout(@RequestBody @Valid AuthDtos.RefreshRequest request) {
+        authService.logout(request);
+        return ResponseEntity.noContent().build();
     }
 }
