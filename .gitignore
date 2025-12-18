@@ -1,4 +1,7 @@
-__pycache__/
-*.pyc
-app.db
-.env
+/target
+/.mvn
+/.idea
+/.vscode
+*.iml
+*.log
+.DS_Store
